@@ -1,1 +1,19 @@
-
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/businessdb?currentSchema=useractivityschema
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+    
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    show-sql: true
+ 
+server:
+  port: 8087
+  servlet:
+    context-path: /business/v1/user
